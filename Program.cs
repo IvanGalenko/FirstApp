@@ -30,11 +30,28 @@ namespace FA
 
             MyFavoriteDay = DaysOfWeek.Friday;
 
-            Console.WriteLine(MyFavoriteDay); */
+            Console.WriteLine(MyFavoriteDay); 
 
             double result = 10 % 3;
-            Console.WriteLine(result);
+            Console.WriteLine(result); 
 
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
+            Console.Write("Enter your age: ");
+            byte age = (byte)int.Parse(Console.ReadLine());
+            Console.WriteLine("Your name is {0} and age is {1} ", name, age);
+            Console.Write("What is your favorite day of week?");
+            DayOfWeek day = (DayOfWeek)int.Parse(Console.ReadLine());
+            Console.WriteLine("Your favorite day is {0}", day); */
+
+            Console.Write("Введите имя: ");
+            var name = Console.ReadLine();
+            Console.Write("Введите возраст: ");
+            var age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ваше имя {0} и вам {1} ", name, age);
+            Console.Write("Введите вашу дату рождения: ");
+            var birthdate = Console.ReadLine();
+            Console.WriteLine("Вы родились {0}", birthdate);
         }
         /*
         enum DaysOfWeek : byte
