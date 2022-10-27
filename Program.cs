@@ -157,7 +157,7 @@ namespace FA
                         Console.WriteLine("Your color is yellow!");
                         break;
                 }
-            } */
+            } 
 
             int t = 0;
 
@@ -196,7 +196,29 @@ namespace FA
                 }
 
                 t++;
-            } while (t < 3);
+            } while (t < 3); */
+
+            int sum = 0;
+
+            while (true)
+            {
+                Console.WriteLine("Введите число");
+                var number = Convert.ToInt32(Console.ReadLine());
+
+                if (number < 0)
+                {
+                    continue;
+                }
+                else if (number == 0)
+                {
+                    break;
+                }
+
+                // number > 0
+                sum += number;
+            }
+
+            Console.WriteLine("Итоговая сумма: {0}", sum);
         }
         #region Модуль 1.3
         /*
