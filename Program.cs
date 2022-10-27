@@ -6,6 +6,7 @@ namespace FA
     {
         static void Main(string[] args)
         {
+            #region Модуль 1.3
             /* string MyName;
             MyName = "Ivan";
             Console.WriteLine(MyName);
@@ -42,7 +43,7 @@ namespace FA
             Console.WriteLine("Your name is {0} and age is {1} ", name, age);
             Console.Write("What is your favorite day of week?");
             DayOfWeek day = (DayOfWeek)int.Parse(Console.ReadLine());
-            Console.WriteLine("Your favorite day is {0}", day); */
+            Console.WriteLine("Your favorite day is {0}", day); 
 
             Console.Write("Введите имя: ");
             var name = Console.ReadLine();
@@ -51,8 +52,12 @@ namespace FA
             Console.WriteLine("Ваше имя {0} и вам {1} ", name, age);
             Console.Write("Введите вашу дату рождения: ");
             var birthdate = Console.ReadLine();
-            Console.WriteLine("Вы родились {0}", birthdate);
+            Console.WriteLine("Вы родились {0}", birthdate); */
+            #endregion
+
+
         }
+        #region Модуль 1.3
         /*
         enum DaysOfWeek : byte
         {
@@ -68,5 +73,6 @@ namespace FA
             Yellow = 200, 
             Green = 300
         } */
+        #endregion
     }
 }
