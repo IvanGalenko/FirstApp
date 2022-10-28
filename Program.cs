@@ -196,7 +196,7 @@ namespace FA
                 }
 
                 t++;
-            } while (t < 3); */
+            } while (t < 3); 
 
             int sum = 0;
 
@@ -218,7 +218,22 @@ namespace FA
                 sum += number;
             }
 
-            Console.WriteLine("Итоговая сумма: {0}", sum);
+            Console.WriteLine("Итоговая сумма: {0}", sum); */
+
+            Console.WriteLine("Введите своё имя");
+
+            var name = Console.ReadLine();
+
+            Console.WriteLine("Ваше имя по буквам: ");
+
+            foreach (var ch in name)
+            {
+                Console.Write(ch + " ");
+            }
+
+            Console.WriteLine("Последняя буква вашего имени: {0}", name[name.Length - 1]);
+
+            Console.ReadKey();
         }
         #region Модуль 1.3
         /*
