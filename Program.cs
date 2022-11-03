@@ -239,12 +239,21 @@ namespace FA
             for (int i = name.Length - 1; i >= 0; i--)
             {
                 Console.Write(name[i] + " ");
-            } */
+            } 
             int[,] array = { { 1, 2, 3 }, { 5, 6, 7 } };
             Console.WriteLine(array[0, 0]);
             foreach (var item in array)
             {
                 Console.Write(item + " ");
+            } */
+            int[,] array = { { 1, 2, 3 }, { 5, 6, 7 }, { 8, 9, 10 }, { 11, 12, 13 } };
+
+            for (int i = 0; i < array.GetUpperBound(0) + 1; i++)
+            {
+                for (int k = 0; k < array.GetUpperBound(1) + 1; k++)
+                    Console.Write(array[k, i] + " ");
+
+                Console.WriteLine();
             }
         }
         #region Модуль 1.3
