@@ -218,7 +218,7 @@ namespace FA
                 sum += number;
             }
 
-            Console.WriteLine("Итоговая сумма: {0}", sum); */
+            Console.WriteLine("Итоговая сумма: {0}", sum); 
 
             Console.WriteLine("Введите своё имя");
 
@@ -233,7 +233,13 @@ namespace FA
 
             Console.WriteLine("Последняя буква вашего имени: {0}", name[name.Length - 1]);
 
-            Console.ReadKey();
+            Console.ReadKey(); */
+            Console.WriteLine("Введите своё имя");
+            var name = Console.ReadLine();
+            for (int i = name.Length - 1; i >= 0; i--)
+            {
+                Console.Write(name[i] + " ");
+            }
         }
         #region Модуль 1.3
         /*
