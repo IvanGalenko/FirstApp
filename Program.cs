@@ -296,9 +296,27 @@ namespace FA
                 {
                     Console.Write(item + " ");
                 }
-            } */
-            
-
+            }
+            //4.3.15
+            var arr = new int[] { -2, 1, -1, 2, 3 };
+            int pol = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > 0) pol++;
+            }
+            Console.WriteLine(pol); 
+            //4.3.16
+            int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
+            int pol = 0;
+            for (int i = 0; i <= arr.GetUpperBound(0); i++)
+            {
+                for (int j = 0; j <= arr.GetUpperBound(1); j++)
+                {
+                    if (arr[i,j] > 0) pol++;
+                }
+            }
+            Console.WriteLine(pol);
+            */
         }
         #region Модуль 1.3
         /*
