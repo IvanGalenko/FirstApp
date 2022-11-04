@@ -254,7 +254,7 @@ namespace FA
                     Console.Write(array[k, i] + " ");
 
                 Console.WriteLine();
-            } */
+            } 
             //4.3.12
             var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
             int temp;
@@ -274,7 +274,15 @@ namespace FA
             foreach (var item in arr)
             {
                 Console.Write(item);
+            } */
+            //4.3.13
+            var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
+            int sum = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i];
             }
+            Console.WriteLine(sum);
         }
         #region Модуль 1.3
         /*
