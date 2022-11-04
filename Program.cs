@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Metadata;
 
 namespace FA
 {
@@ -359,7 +360,7 @@ namespace FA
             Console.Write("Введите ваш возраст: ");
             age = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Ваше имя: {0}", name);
-            Console.WriteLine("Ваш возраст: {0}", age); */
+            Console.WriteLine("Ваш возраст: {0}", age); 
             //4.4.5
             (string Name, string Type, double Age, int NameCount) Pet;
             Console.Write("Введите имя питомца: ");
@@ -368,7 +369,40 @@ namespace FA
             Console.Write("Введите тип питомца: ");
             Pet.Type = Console.ReadLine();
             Console.Write("Введите возраст питомца: ");
-            Pet.Age = Convert.ToDouble(Console.ReadLine());
+            Pet.Age = Convert.ToDouble(Console.ReadLine());*/
+            (string Name, 
+                string LastName, 
+                string Login, 
+                int LoginCount, 
+                bool Pet, 
+                double Age, 
+                string[] favcolors) User;
+            for (int i=0;i<=2;i++)
+            {
+                Console.Write("Введите имя: ");
+                User.Name = Console.ReadLine();
+                Console.Write("Введите фамилию: ");
+                User.LastName = Console.ReadLine();
+                Console.Write("Введите логин: ");
+                User.Login = Console.ReadLine();
+                User.LoginCount = User.Login.Length;
+                Console.WriteLine("Есть ли у вас животные? Да или Нет");
+                string temp = Console.ReadLine();
+                if (temp == "Да")
+                {
+                    User.Pet = true;
+                }
+                else
+                {
+                    User.Pet = false;
+                }
+                User.favcolors = new string[3];
+                Console.WriteLine("Введите три любимых цвета пользователя");
+                for (int k = 0; k <= 2; k++)
+                {
+                    User.favcolors[k] = Console.ReadLine();
+                }
+            }
         }
         #region Модуль 1.3
         /*
