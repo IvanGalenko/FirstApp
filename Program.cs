@@ -316,7 +316,7 @@ namespace FA
                 }
             }
             Console.WriteLine(pol);
-            */
+            
             //4.3.17
             int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
             int temp;
@@ -338,7 +338,37 @@ namespace FA
             foreach (var item in arr)
             {
                 Console.Write(item);
-            }
+            } 
+            //4.4.2
+            (string name, int age) anketa;
+
+            Console.Write("Введите ваше имя: ");
+            anketa.name = Console.ReadLine();
+            Console.Write("Введите ваш возраст: ");
+            anketa.age = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Ваше имя: {0}", anketa.name);
+            Console.WriteLine("Ваш возраст: {0}", anketa.age);
+
+            //4.4.3
+            var (name, age) = ("Иван", 23);
+            Console.WriteLine("Ваше имя: {0}", name);
+            Console.WriteLine("Ваш возраст: {0}", age);
+            Console.Write("Введите ваше имя: ");
+            name = Console.ReadLine();
+            Console.Write("Введите ваш возраст: ");
+            age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ваше имя: {0}", name);
+            Console.WriteLine("Ваш возраст: {0}", age); */
+            //4.4.5
+            (string Name, string Type, double Age, int NameCount) Pet;
+            Console.Write("Введите имя питомца: ");
+            Pet.Name = Console.ReadLine();
+            Pet.NameCount = Pet.Name.Length;
+            Console.Write("Введите тип питомца: ");
+            Pet.Type = Console.ReadLine();
+            Console.Write("Введите возраст питомца: ");
+            Pet.Age = Convert.ToDouble(Console.ReadLine());
         }
         #region Модуль 1.3
         /*
