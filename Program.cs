@@ -245,7 +245,7 @@ namespace FA
             foreach (var item in array)
             {
                 Console.Write(item + " ");
-            } */
+            } 
             int[,] array = { { 1, 2, 3 }, { 5, 6, 7 }, { 8, 9, 10 }, { 11, 12, 13 } };
 
             for (int i = 0; i < array.GetUpperBound(0) + 1; i++)
@@ -254,6 +254,26 @@ namespace FA
                     Console.Write(array[k, i] + " ");
 
                 Console.WriteLine();
+            } */
+            //4.3.12
+            var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
+            int temp;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[i] > arr[j])
+                    {
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            foreach (var item in arr)
+            {
+                Console.Write(item);
             }
         }
         #region Модуль 1.3
