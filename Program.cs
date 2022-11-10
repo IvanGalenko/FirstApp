@@ -404,7 +404,15 @@ namespace FA
                 }
             }*/
             #endregion
-
+            (string Name, string[] Dishes) User;
+            Console.Write("Введите имя пользователя: ");
+            User.Name = Console.ReadLine();
+            User.Dishes = new string[5];
+            for (int i = 0; i < User.Dishes.Length; i++)
+            {
+                Console.Write("Введите любимое блюдо {0} из {1}: ", i + 1, User.Dishes.Length);
+                User.Dishes[i] = Console.ReadLine();
+            }
         }
         #region Модуль 1.3
         /*
