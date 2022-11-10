@@ -55,7 +55,7 @@ namespace FA
             var birthdate = Console.ReadLine();
             Console.WriteLine("Вы родились {0}", birthdate); */
             #endregion
-
+            #region Модуль 1.4
             /*
             string A = "a";
             string B = "b";
@@ -369,7 +369,7 @@ namespace FA
             Console.Write("Введите тип питомца: ");
             Pet.Type = Console.ReadLine();
             Console.Write("Введите возраст питомца: ");
-            Pet.Age = Convert.ToDouble(Console.ReadLine());*/
+            Pet.Age = Convert.ToDouble(Console.ReadLine());
             (string Name, 
                 string LastName, 
                 string Login, 
@@ -402,7 +402,9 @@ namespace FA
                 {
                     User.favcolors[k] = Console.ReadLine();
                 }
-            }
+            }*/
+            #endregion
+
         }
         #region Модуль 1.3
         /*
