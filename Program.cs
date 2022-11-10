@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Reflection.Metadata;
 
 namespace FA
@@ -7,7 +8,7 @@ namespace FA
     {
         static void Main(string[] args)
         {
-            #region Модуль 1.3
+            #region Модуль 3
             /* string MyName;
             MyName = "Ivan";
             Console.WriteLine(MyName);
@@ -55,7 +56,7 @@ namespace FA
             var birthdate = Console.ReadLine();
             Console.WriteLine("Вы родились {0}", birthdate); */
             #endregion
-            #region Модуль 1.4
+            #region Модуль 4
             /*
             string A = "a";
             string B = "b";
@@ -404,6 +405,7 @@ namespace FA
                 }
             }*/
             #endregion
+            /*
             (string Name, string[] Dishes) User;
             Console.Write("Введите имя пользователя: ");
             User.Name = Console.ReadLine();
@@ -413,8 +415,49 @@ namespace FA
                 Console.Write("Введите любимое блюдо {0} из {1}: ", i + 1, User.Dishes.Length);
                 User.Dishes[i] = Console.ReadLine();
             }
+            var favcolors = new string[3];
+            for (int i = 0; i < favcolors.Length; i++)
+            {
+                favcolors[i] = ShowColor();
+            }
+            foreach (var colors in favcolors)
+            {
+                Console.WriteLine(colors);
+            }*/
+            var array = GetArrayFromConsole();
+            foreach (var r in array) { Console.Write(r + " "); }
         }
-        #region Модуль 1.3
+        static string ShowColor()
+        {
+            Console.Write("Напишите свой любимый цвет: ");
+            string color = Console.ReadLine();
+            return color;
+        }
+        static int[] GetArrayFromConsole()
+        {
+            var result = new int[5];
+
+            for (int i = 0; i < result.Length; i++)
+            {
+                Console.Write("Введите элемент массива номер {0}: ", i + 1);
+                result[i] = int.Parse(Console.ReadLine());
+            }
+            int temp;
+            for (int i = 0; i < result.Length; i++)
+            {
+                for (int j = i + 1; j < result.Length; j++)
+                {
+                    if (result[i] > result[j])
+                    {
+                        temp = result[i];
+                        result[i] = result[j];
+                        result[j] = temp; 
+                    }
+                }
+            }
+            return result;
+        }
+        #region Модуль 3
         /*
         enum DaysOfWeek : byte
         {
