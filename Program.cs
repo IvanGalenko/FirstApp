@@ -405,6 +405,7 @@ namespace FA
                 }
             }*/
             #endregion
+            #region Модуль 4
             /*
             (string Name, string[] Dishes) User;
             Console.Write("Введите имя пользователя: ");
@@ -423,25 +424,61 @@ namespace FA
             foreach (var colors in favcolors)
             {
                 Console.WriteLine(colors);
-            }*/
+            }
             var array = GetArrayFromConsole();
             foreach (var r in array) { Console.Write(r + " "); }
+
+            var array = GetArrayFromConsole(3);
+            var sortedarray = SortArray(array);
+
+            foreach (var i in sortedarray)
+            {
+                Console.Write(i + " ");
+            }*/
+            var array = GetArrayFromConsole(10);
+            ShowArray(array, true);
+
+            #endregion
         }
-        static string ShowColor()
+        static void ShowArray(int[] array, bool sort = false)
+        {
+            var arr = array;
+            if (sort)
+            {
+                arr = SortArray(array);
+            }
+            foreach (int i in arr)
+            {
+                Console.Write(i + " ");
+            }
+        }
+        static string ShowColor(string username)
         {
             Console.Write("Напишите свой любимый цвет: ");
             string color = Console.ReadLine();
             return color;
         }
-        static int[] GetArrayFromConsole()
+        static void ShowColors(params string[] favcolors)
         {
-            var result = new int[5];
+            Console.WriteLine("Ваши любимые цвета:");
+            foreach (var color in favcolors)
+            {
+                Console.WriteLine(color);
+            }
+        }
+        static int[] GetArrayFromConsole(int num = 5)
+        {
+            var result = new int[num];
 
             for (int i = 0; i < result.Length; i++)
             {
                 Console.Write("Введите элемент массива номер {0}: ", i + 1);
                 result[i] = int.Parse(Console.ReadLine());
             }
+            return result;
+        }
+        static int[] SortArray(int[] result)
+        {
             int temp;
             for (int i = 0; i < result.Length; i++)
             {
@@ -451,9 +488,10 @@ namespace FA
                     {
                         temp = result[i];
                         result[i] = result[j];
-                        result[j] = temp; 
+                        result[j] = temp;
                     }
                 }
+                
             }
             return result;
         }
