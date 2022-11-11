@@ -434,18 +434,55 @@ namespace FA
             foreach (var i in sortedarray)
             {
                 Console.Write(i + " ");
-            }*/
-            var array = GetArrayFromConsole(10);
-            ShowArray(array, true);
+            }
+            
 
+            //5.3
+            int age = 23;
+            ChangeAge(age);
+            Console.WriteLine(age);
+            string name = "Ваня";
+            GetName(ref name);
+            Console.WriteLine(name);
+            var arr = new int[] { 1, 2, 3 };
+            BigDataOperation(in arr);
+
+            Console.WriteLine(arr[0]);
+           
+            var array = GetArrayFromConsole(ref num);
+            ShowArray(array, true); 
+            int num = 5;
+            var arr = new int[4];
+            var arr2 = new int[4];
+            SortArray2(GetArrayFromConsole(ref num), out arr, out arr2);
+            foreach (int i in arr) Console.Write(i + " ");
+            Console.WriteLine();
+            foreach (int i in arr) Console.Write(i + " ");*/
+
+            //5.5
             #endregion
+        }
+        static void BigDataOperation(in int[] arr)
+        {
+            arr[0] = 4;
+        }
+        static void ChangeAge(int age)
+        {
+            age = 24;
+        }
+        static void GetName(out string name, out string oldname)
+        {
+            oldname = "Евгения";
+            Console.WriteLine("Введите имя");
+            name = Console.ReadLine();
+
         }
         static void ShowArray(int[] array, bool sort = false)
         {
             var arr = array;
             if (sort)
             {
-                arr = SortArray(array);
+                arr = SortArrayDesc(array);
             }
             foreach (int i in arr)
             {
@@ -466,8 +503,9 @@ namespace FA
                 Console.WriteLine(color);
             }
         }
-        static int[] GetArrayFromConsole(int num = 5)
+        static int[] GetArrayFromConsole(ref int num)
         {
+            num = 4;
             var result = new int[num];
 
             for (int i = 0; i < result.Length; i++)
@@ -492,6 +530,48 @@ namespace FA
                     }
                 }
                 
+            }
+            return result;
+        }
+        static void SortArray2(in int[] array, out int[] sorteddesc, out int[] sortedasc)
+        {
+            sorteddesc = SortArrayDesc(in array);
+            sortedasc = SortArrayAsc(in array);
+            Console.WriteLine();
+        }
+        static int[] SortArrayDesc(in int[] result)
+        {
+            int temp;
+            for (int i = 0; i < result.Length; i++)
+            {
+                for (int j = i + 1; j < result.Length; j++)
+                {
+                    if (result[i] < result[j])
+                    {
+                        temp = result[i];
+                        result[i] = result[j];
+                        result[j] = temp;
+                    }
+                }
+
+            }
+            return result;
+        }
+        static int[] SortArrayAsc(in int[] result)
+        {
+            int temp;
+            for (int i = 0; i < result.Length; i++)
+            {
+                for (int j = i + 1; j < result.Length; j++)
+                {
+                    if (result[i] > result[j])
+                    {
+                        temp = result[i];
+                        result[i] = result[j];
+                        result[j] = temp;
+                    }
+                }
+
             }
             return result;
         }
