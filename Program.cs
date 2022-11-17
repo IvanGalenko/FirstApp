@@ -466,9 +466,39 @@ namespace FA
 
             Console.WriteLine("Укажите глубину эха");
             var deep = int.Parse(Console.ReadLine());
-            Echo(str, deep);
-            
+            //Echo(str, deep);
+            //Console.WriteLine(Factorial(20));
+            Console.WriteLine(PowerUp(2, 3));
             #endregion
+        }
+        public static int PowerUp(int N, byte pow)
+        {
+            if (pow == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                if (pow == 1)
+                {
+                    return N;
+                }
+                else
+                {
+                    return N * PowerUp(N, --pow);
+                }
+            }
+        }
+        static decimal Factorial(int x)
+        {
+            if (x == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return x * Factorial(x - 1);
+            }
         }
         static void Echo(string saidworld, int deep)
         {
@@ -477,6 +507,7 @@ namespace FA
             {
                 modif = modif.Remove(0, 2);
             }
+            Console.BackgroundColor = (ConsoleColor)deep;
             Console.WriteLine("..." + modif);
             if (deep > 1)
             {
