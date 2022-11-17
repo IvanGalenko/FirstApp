@@ -457,10 +457,31 @@ namespace FA
             SortArray2(GetArrayFromConsole(ref num), out arr, out arr2);
             foreach (int i in arr) Console.Write(i + " ");
             Console.WriteLine();
-            foreach (int i in arr) Console.Write(i + " ");*/
+            foreach (int i in arr2) Console.Write(i + " ");*/
 
             //5.5
+            
+            Console.WriteLine("Напишите что-то");
+            var str = Console.ReadLine();
+
+            Console.WriteLine("Укажите глубину эха");
+            var deep = int.Parse(Console.ReadLine());
+            Echo(str, deep);
+            
             #endregion
+        }
+        static void Echo(string saidworld, int deep)
+        {
+            var modif = saidworld;
+            if (modif.Length > 2)
+            {
+                modif = modif.Remove(0, 2);
+            }
+            Console.WriteLine("..." + modif);
+            if (deep > 1)
+            {
+                Echo(modif, deep - 1);
+            }
         }
         static void BigDataOperation(in int[] arr)
         {
@@ -535,8 +556,12 @@ namespace FA
         }
         static void SortArray2(in int[] array, out int[] sorteddesc, out int[] sortedasc)
         {
-            sorteddesc = SortArrayDesc(in array);
-            sortedasc = SortArrayAsc(in array);
+            int[] arrdesc = new int[array.Length];
+            Array.Copy(array, arrdesc, array.Length);
+            int[] arrasc = new int[array.Length];
+            Array.Copy(array, arrasc, array.Length);
+            sorteddesc = SortArrayDesc(in arrdesc);
+            sortedasc = SortArrayAsc(in arrasc);
             Console.WriteLine();
         }
         static int[] SortArrayDesc(in int[] result)
